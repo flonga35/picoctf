@@ -1,1 +1,10 @@
+//hex2raw
 echo 9b0f7b43804d4abd6f7e1bbe515c55d5 | xxd -r -p | ./hex2raw
+//raw2hex
+a = raw_input() # gets the output of raw2hex
+a[12:]    # the output without the leading 'The flag is:'
+[ord(x) for x in a[12:]] # creates a list of the integer values for each character in the flag
+[hex(ord(x))[2:] for x in a[12:]] # convert those integers to hex values and strip off '0x'
+''.join([hex(ord(x))[2:] for x in a[12:]]) # turn the list back into a string with no gaps
+print(''.join([hex(ord(x))[2:] for x in a[12:]])) # Print it out
+flag: e519e7aa7e593fde891bd24aaa423ea4
